@@ -1,0 +1,135 @@
+ALGORITHM distinct 
+
+
+VAR
+ i,j,sum=0:INTEGER;
+ tabA,tabB : ARRAY_OF INTEGER;
+
+
+BEGIN 
+    Read(tabA);
+    Read(TabB); 
+
+      FOR i FROM 0 TO i <= tabA.length-1 STEP 1  DO
+        IF (tabB[j]=tabA[i]) THEN
+            sum=sum+tabB[j];
+            j=j+1;
+            i=0;
+        IF (i=tabA.length && j <> tabB.length) THEN
+                i=0; j=j+1
+            
+        IF (j=tabB.length-1) THEN
+                i=tabA.length
+               
+            END_IF
+       END_FOR
+
+    Write(sum);
+
+END
+
+
+
+ALGORITHM hash_distinct 
+   
+   
+   
+   VAR
+
+
+   tabA,tabB : ARRAY_OF INTEGER;
+   tab : HASH_TABLE<INTEGER,INTEGER>;
+   p,i,j=0:INTEGER;
+
+    BEGIN 
+    Read(tabA);
+    Read(tabB);
+    FOR i FROM 0 TO i<=tabA.length+tab2.length-2 STEP step 1 DO
+        IF (i<=tabA.length-1) THEN
+            tab.insert(i,tabA[i])
+            ELSE 
+            tab.insert(i,tabA[j])
+            j:=j+1
+        END_IF
+        
+    END_FOR
+
+       FOR p FROM 0 TO tab.length-1 STEP 1  DO
+        FOR k FROM tabA.length TO tab.length-1 STEP 1  DO
+        IF (tab[p]=tab[k]) THEN
+            sum=sum+tab[k]
+        END_IF
+        
+   END_FOR
+    Write(sum);
+
+END
+
+ALGORITHM overlapping
+
+
+VAR
+ i,j,sum=0:INTEGER;
+ tabA,tabB : ARRAY_OF INTEGER;
+
+
+BEGIN 
+    Read(tabA);
+    Read(TabB); 
+
+      FOR i FROM 0 TO i <= tabA.length-1 STEP 1  DO
+        IF (tabB[j]<>tabA[i]) THEN
+            sum=sum+tabB[j];
+            j=j+1;
+            i=0;
+        IF (i=tabA.length && j <> tabB.length) THEN
+                i=0; j=j+1
+            
+        IF (j=tabB.length-1) THEN
+                i=tabA.length
+               
+            END_IF
+       END_FOR
+
+    Write(sum);
+
+END
+
+
+
+ALGORITHM hash_overlapping
+   
+   
+   
+   VAR
+
+
+   tabA,tabB : ARRAY_OF INTEGER;
+   tab : HASH_TABLE<INTEGER,INTEGER>;
+   p,i,j=0:INTEGER;
+
+    BEGIN 
+    Read(tabA);
+    Read(tabB);
+    FOR i FROM 0 TO i<=tabA.length+tab2.length-2 STEP step 1 DO
+        IF (i<=tabA.length-1) THEN
+            tab.insert(i,tabA[i])
+            ELSE 
+            tab.insert(i,tabA[j])
+            j:=j+1
+        END_IF
+        
+    END_FOR
+
+       FOR p FROM 0 TO tab.length-1 STEP 1  DO
+        FOR k FROM tabA.length TO tab.length-1 STEP 1  DO
+        IF (tab[p]<>tab[k]) THEN
+            sum=sum+tab[k]
+        END_IF
+        
+   END_FOR
+    Write(sum);
+
+END
+
+ 
